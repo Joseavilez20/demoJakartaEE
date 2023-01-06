@@ -1,7 +1,9 @@
 package com.example.demowebjava;
 
 import java.io.*;
+import java.sql.Connection;
 
+import connection.Conexion;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -14,6 +16,7 @@ public class HelloServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Connection con = Conexion.conectar();
         response.setContentType("text/html");
 
         // Hello
